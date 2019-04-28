@@ -6,10 +6,16 @@ input:
         http_server:
           path: /
         processors:
-          - type: text
-            text:
-              operator: prepend
-              value: "get email message: "
+          - type: jmespath
+            jmespath:
+              query: "audit.context"
+          # - type: filter_parts
+          #   filter_parts:
+          #     type: text
+          #     text:
+          #       arg: "Admin - Export databases for backup"
+          #       operator: equals
+          #       part: 0
           - type: subprocess
             subprocess:
               args: ["/app.sh"]
