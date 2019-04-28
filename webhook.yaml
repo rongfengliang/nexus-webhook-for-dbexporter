@@ -10,5 +10,9 @@ input:
             text:
               operator: prepend
               value: "get email message: "
+          - type: subprocess
+            subprocess:
+              args: ["/app.sh"]
+              name: sh
 output:
   type: stdout

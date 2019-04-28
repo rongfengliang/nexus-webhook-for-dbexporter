@@ -11,6 +11,7 @@ services:
     image: jeffail/benthos
     volumes:
     - "./webhook.yaml:/benthos.yaml"
+    - "./app.sh:/app.sh"
     ports:
     - "4195:4195"
   smtp2http:
